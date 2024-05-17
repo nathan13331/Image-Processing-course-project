@@ -1,4 +1,3 @@
-Here's a README file for the scripts `training_model`, `gen_adversarial_images`, and `gen_transformed_images`. This README will provide an overview of each script, how to use them, and their respective command-line arguments.
 # CIFAR-10 ResNet Training and Adversarial Example Generation
 
 This repository contains scripts for training ResNet models on the CIFAR-10 dataset, generating adversarial examples, and applying various image transformations to test the model robustness.
@@ -116,7 +115,7 @@ python compute_adversarial_accuracy.py --model resnet50
 ```
 
 ## Directory Structure
-- 'src/': Contains the scripts for training, generating adversarial examples, and applying image transformations.
+- `src/`: Contains the scripts for training, generating adversarial examples, and applying image transformations.
 - `lib/`: Contains the necessary libraries and modules for training, loading ResNet models, and generating adversarial or transformed images.
 - `pretrained_model/`: Directory where the trained models will be saved.
 - `pic/`: Directory containing the CIFAR-10 dataset and generated images.
