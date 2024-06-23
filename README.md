@@ -232,6 +232,17 @@ The transformed images are saved in the `pic/adversarial_transformed_images/{res
 ```bash
 python gen_transform_images.py --model '<model_name>' --image_transform '<transformation>'
 ```
+#### Directory Structure
+The adversarial examples are saved in the `pic/adversarial_images/{resnet_model_name}` directory.
+```bash
+pic/
+├── adversarial_transformed_images/
+│   ├── resnet18/
+│   ├── resnet34/
+│   ├── ...
+│   └── resnet152/
+└── ...
+```
 
 #### Arguments
 - `--image_transform`: Specify which image transformation to apply 
