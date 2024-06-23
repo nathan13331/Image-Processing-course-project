@@ -33,12 +33,12 @@ def training_model(args):
 
     # Load ResNet model and load pretrained model if available
     model = load_resnet(resnet_model)
-    if os.path.exists(f'../pretrained_model/{resnet_model}/original_CIFAR10.pth'):
-        print(f'Finding pretrained model in ../pretrained_model/{resnet_model}/original_CIFAR10.pth, load it? (y/n)')
+    if os.path.exists(f'../pretrained_model/{resnet_model}/saved_model.pth'):
+        print(f'Finding pretrained model in ../pretrained_model/{resnet_model}/saved_model.pth, load it? (y/n)')
         choice = input()
         if choice == 'y':
-            print(f'Loading pretrained model from ../pretrained_model/{resnet_model}/original_CIFAR10.pth')
-            pretrained_model_path = f'../pretrained_model/{resnet_model}/original_CIFAR10.pth'
+            print(f'Loading pretrained model from ../pretrained_model/{resnet_model}/saved_model.pth')
+            pretrained_model_path = f'../pretrained_model/{resnet_model}/saved_model.pth'
             model.load_state_dict(torch.load(pretrained_model_path))
         else:
             print('Training from scratch')
@@ -53,8 +53,8 @@ def training_model(args):
     print('Training complete')
 
     # Save the model
-    torch.save(model.state_dict(), f'../pretrained_model/{resnet_model}/original_CIFAR10.pth')
-    print(f'Model saved to ../pretrained_model/{resnet_model}/original_CIFAR10.pth')
+    torch.save(model.state_dict(), f'../pretrained_model/{resnet_model}/saved_model.pth')
+    print(f'Model saved to ../pretrained_model/{resnet_model}/saved_model.pth')
 
 
 # run:
