@@ -2,8 +2,6 @@
 
 This repository contains scripts for training ResNet models on the CIFAR-10 dataset, generating adversarial examples, and applying various image transformations to test the model robustness.
 
------- This project uses only CPU since my laptop does not have a GPU for demo purposes and CUDA is not available on MacOS. ------
-
 ## Directory Structure
 - `src/`: Contains the scripts for training, generating adversarial examples, and applying image transformations.
 - `lib/`: Contains the necessary libraries and modules for training, loading ResNet models, and generating adversarial or transformed images.
@@ -64,7 +62,17 @@ python.exe -m pip install --upgrade pip
 pip3 install -r requirements.txt
 ```
 
+```bash
+├── README.md
+├── requirements.txt
+├── venv/
+└── ...
+```
+
 3. Install PyTorch and torchvision for CPU.
+
+This project uses only CPU since my laptop does not have a GPU for demo purposes and CUDA is not available on MacOS,uses CPU will be more efficient.
+
 For MacOS users, torch and torchvision can be installed using the following command:
 
 ```bash
