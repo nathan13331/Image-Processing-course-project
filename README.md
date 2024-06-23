@@ -1,9 +1,8 @@
 # CIFAR-10 ResNet Training and Adversarial Example Generation
 
-This repository contains scripts for training ResNet models on the CIFAR-10 dataset, generating adversarial examples, and applying various image transformations to test the model robustness.
+This repository contains scripts for training ResNet models on the CIFAR-10 dataset, generating adversarial examples, and applying various image transformations to test the impact of adversarial examples.
 
 ## Directory Structure
-- `src/`: Contains the scripts for training, generating adversarial examples, and applying image transformations.
 - `lib/`: Contains the necessary libraries and modules for training, loading ResNet models, and generating adversarial or transformed images.
 - `pretrained_model/`: Directory where the trained models will be saved.
 - `pic/`: Directory containing the CIFAR-10 dataset and generated images.
@@ -12,14 +11,14 @@ This repository contains scripts for training ResNet models on the CIFAR-10 data
 
 ```bash
 ├── README.md
-├── src/
-│   ├── __init__.py
-│   ├── training_model.py
-│   ├── compute_original_accuracy.py
-│   ├── gen_adversarial_images_dataset.py
-│   ├── compute_adversarial_accuracy.py
-│   ├── gen_transform_images_dataset.py
-│   └── compute_transform_accuracy.py
+├── requirements.txt
+├── training_model.py
+├── compute_original_accuracy.py
+├── gen_adversarial_images_dataset.py
+├── compute_adversarial_accuracy.py
+├── gen_transform_images_dataset.py
+├── compute_transform_accuracy.py
+├── unpickle_CIFAR10.py
 ├── lib/
 │   ├── __init__.py
 │   ├── dataset.py
@@ -34,8 +33,6 @@ This repository contains scripts for training ResNet models on the CIFAR-10 data
 │   ├── adversarial_images/
 │   └── adversarial_transformed_images/
 ├── datasets/
-├── requirements.txt
-├── venv/
 └── ...
 ```
 
@@ -54,18 +51,13 @@ git clone https://github.com/nathan13331/Image-Processing-course-project.git
 Note that the project uses Python 3.9. If you are using a different version of Python, make sure to install the required packages accordingly.
 
 ```bash
-# Create a virtual environment if you don't have one yet
-# python3 -m venv venv
-# source venv/bin/activate
-cd Image-Processing-course-project
 python.exe -m pip install --upgrade pip
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ```bash
 ├── README.md
 ├── requirements.txt
-├── venv/
 └── ...
 ```
 
@@ -95,7 +87,7 @@ To use the CIFAR-10 dataset, follow the steps below:
 
 The CIFAR-10 dataset is preprocessed by dividing it into training and test sets. The training set is used to train the ResNet models, and the test set is used to evaluate the model's performance on adversarial examples and transformed images.
 
-Download the CIFAR-10 dataset from the official website https://www.cs.toronto.edu/~kriz/cifar.html .For this project, choose the `CIFAR-10 python version` and extract the file.Then, move all ".bin" files(such as `data_batch_1.bin`, `data_batch_2.bin`,...) into the `datasets/` directory.
+Download the CIFAR-10 dataset from the official website https://www.cs.toronto.edu/~kriz/cifar.html . For this project, choose the `CIFAR-10 python version` and extract the file. Create directory `datasets/` under the project. Then, move all ".bin" files(such as `data_batch_1.bin`, `data_batch_2.bin`,...) into the `datasets/` directory.
 
 ```bash
 ├── datasets/
@@ -164,7 +156,7 @@ This script trains a ResNet model on the CIFAR-10 dataset and saves the trained 
 #### Usage
 
 ```bash
-python training_model.py --model '<model_name>' --epochs '<num_epochs>' --lr '<learning_rate>'
+python training_model.py --model '<model_name>' --epoch '<num_epochs>'
 ```
 
 #### Arguments
@@ -175,7 +167,17 @@ python training_model.py --model '<model_name>' --epochs '<num_epochs>' --lr '<l
 #### Example
 
 ```bash
-python training_model.py --model 'resnet18' --epochs 200
+python training_model.py --model 'resnet18' --epoch 200
+```
+#### Directory Structure
+The trained models are saved in the `pretrained_model/{resnet_model_name}` directory.
+```bash
+pretrained_model/
+├── resnet18/
+│   └── saved_model.pth
+├── ...
+└── resnet152/
+    └── saved_model.pth
 ```
 
 ### 2. Testing Model's on Test Set (`compute_original_accuracy.py`)
@@ -190,7 +192,7 @@ python compute_original_accuracy.py --model '<model_name>'
 
 ### 3. Generating Adversarial Examples (`gen_adversarial_images.py`)
 
-This script generates adversarial examples for a trained ResNet model and dataset using the Fast Gradient Sign Method (FGSM).
+This script generates adversarial examples for a trained ResNet model and test dataset using the Fast Gradient Sign Method (FGSM).
 
 #### Usage
 
