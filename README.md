@@ -164,7 +164,7 @@ This script trains a ResNet model on the CIFAR-10 dataset and saves the trained 
 #### Usage
 
 ```bash
-python3 training_model.py --model '<model_name>' --epochs '<num_epochs>' --lr '<learning_rate>'
+python training_model.py --model '<model_name>' --epochs '<num_epochs>' --lr '<learning_rate>'
 ```
 
 #### Arguments
@@ -175,17 +175,17 @@ python3 training_model.py --model '<model_name>' --epochs '<num_epochs>' --lr '<
 #### Example
 
 ```bash
-python3 training_model.py --model 'resnet18' --epochs 200
+python training_model.py --model 'resnet18' --epochs 200
 ```
 
-### 2. Testing Model's on Test Set (`test_model.py`)
+### 2. Testing Model's on Test Set (`compute_original_accuracy.py`)
 
 This script tests the accuracy of a trained ResNet model on the CIFAR-10 dataset.
 
 #### Usage
 
 ```bash
-python3 test_model.py --model '<model_name>'
+python compute_original_accuracy.py --model '<model_name>'
 ```
 
 ### 3. Generating Adversarial Examples (`gen_adversarial_images.py`)
@@ -195,7 +195,7 @@ This script generates adversarial examples for a trained ResNet model and datase
 #### Usage
 
 ```bash
-python3 gen_adversarial_images.py --model '<model_name>'
+python gen_adversarial_images.py --model '<model_name>'
 ```
 #### Directory Structure
 The adversarial examples are saved in the `pic/adversarial_images/{resnet_model_name}` directory.
@@ -216,7 +216,7 @@ This script tests the accuracy of a ResNet model on the CIFAR-10 dataset with ad
 #### Usage
 
 ```bash
-python3 compute_adversarial_accuracy.py --model '<model_name>'
+python compute_adversarial_accuracy.py --model '<model_name>'
 ```
 
 ### 5. Generating Transformed Images (`gen_transformed_images.py`)
@@ -228,7 +228,7 @@ The transformed images are saved in the `pic/adversarial_transformed_images/{res
 #### Usage
 
 ```bash
-python3 gen_transform_images.py --model '<model_name>' --image_transform '<transformation>'
+python gen_transform_images.py --model '<model_name>' --image_transform '<transformation>'
 ```
 
 #### Arguments
@@ -248,7 +248,7 @@ Options are:
 #### Example
 
 ```bash
-python3 gen_transform_images.py --model 'resnet18' --image_transform 'bit_quantization_8'
+python gen_transform_images.py --model 'resnet18' --image_transform 'bit_quantization_8'
 ```
 
 ### 6. Testing Model on Transformed Images (`compute_transform_accuracy.py`)
@@ -258,5 +258,5 @@ This script tests the accuracy of a ResNet model on the CIFAR-10 dataset with sp
 #### Usage
 
 ```bash
-python3 compute_transform_accuracy.py --model '<model_name>' --image_transform '<transformation>'
+python compute_transform_accuracy.py --model '<model_name>' --image_transform '<transformation>'
 ```
