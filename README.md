@@ -48,7 +48,7 @@ To setup the environment, follow the steps below:
 1. Clone the repository
 
 ```bash
-git clone https://github.com/nathan13331/adversarial-examples-cifar10.git
+git clone https://github.com/nathan13331/Image-Processing-course-project.git
 ```
 
 2. Install the required packages
