@@ -1,36 +1,19 @@
-# Deep learning library
-torch==1.9.0
-torchvision==0.10.0
-
 # Image processing
-opencv-python==4.5.3.56
-Pillow==8.2.0
+opencv-python==4.7.0.72
+Pillow==9.4.0
 
 # Data handling and scientific computing
-numpy==1.21.0
-pandas==1.3.0
+numpy==1.23.5
+pandas==1.5.3
 
 # Progress bar
-tqdm==4.61.2
+tqdm==4.64.1
 
 # Argument parsing
 argparse==1.4.0
 
 # Required for image transformations
-scikit-image==0.18.3
+scikit-image==0.19.3
 
 # Non-local means denoising (assuming scikit-image is used)
-scipy==1.7.0
-
-# Optional: If using Jupyter notebooks for experimentation
-jupyterlab==3.0.16
-
-# Additional libraries for completeness
-torchvision.transforms.functional
-torchvision.utils
-PIL
-torch.utils.data
-torch.hub
-torch.nn.functional
-torch.optim
-torch.nn
+scipy==1.10.0
