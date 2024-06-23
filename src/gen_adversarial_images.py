@@ -24,7 +24,7 @@ def gen_adversarial_images(args):
     # Load the saved model
     test_set = dataset.CIFAR10(f'../pic/test')
     model = load_resnet(resnet_model)
-    model.load_state_dict(torch.load(f'../pretrained_model/{resnet_model}/original_CIFAR10.pth'))
+    model.load_state_dict(torch.load(f'../pretrained_model/{resnet_model}/saved_model.pth'))
     model.eval()
 
     output_folder = f'../pic/adversarial_images/{resnet_model}'
