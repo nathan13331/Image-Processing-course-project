@@ -53,9 +53,12 @@ git clone https://github.com/nathan13331/Image-Processing-course-project.git
 ```
 
 2. Install the required packages
+Note that the project uses Python 3.9. If you are using a different version of Python, make sure to install the required packages accordingly.
 
 ```bash
-# create the venv if needed
+# Create a virtual environment if you don't have one yet
+# python3 -m venv venv
+# source venv/bin/activate
 cd Image-Processing-course-project
 python.exe -m pip install --upgrade pip
 pip3 install -r requirements.txt
