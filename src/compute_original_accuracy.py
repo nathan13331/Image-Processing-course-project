@@ -27,14 +27,14 @@ def test_original_accuracy(args):
 
     # Load the saved model
     model = load_resnet(resnet_model)
-    pretrained_model_path = f'../pretrained_model/{resnet_model}/original_CIFAR10.pth'
+    pretrained_model_path = f'../pretrained_model/{resnet_model}/saved_model.pth'
     if not os.path.exists(pretrained_model_path):
         print(f'Model not found at {pretrained_model_path}')
         return 0
     else:
         model.load_state_dict(torch.load(pretrained_model_path))
         model.eval()
-        print(f'Model loaded from {resnet_model}/original_CIFAR10.pth')
+        print(f'Model loaded from {resnet_model}/saved_model.pth')
 
     # Test the model on the original test set
     print('Start testing')
